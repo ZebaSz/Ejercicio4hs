@@ -12,6 +12,7 @@ const val contentType = "application/json"
 
 class MainViewModelFactory : ViewModelProvider.Factory {
     private val retrofit = Retrofit.Builder()
+        // TODO: move this to config file
         .baseUrl("https://www.themealdb.com/")
         .addConverterFactory(Json { ignoreUnknownKeys = true }.asConverterFactory(MediaType.get(contentType)))
         .build()

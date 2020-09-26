@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import zebaszp.ejercicio4hs.databinding.ItemMealBinding
 import zebaszp.ejercicio4hs.domain.Meal
+import zebaszp.ejercicio4hs.ui.detail.DetailActivity
 
 class MainRecyclerAdapter(private val data: List<Meal>) : RecyclerView.Adapter<MealViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MealViewHolder {
@@ -23,6 +24,9 @@ class MainRecyclerAdapter(private val data: List<Meal>) : RecyclerView.Adapter<M
 
 class MealViewHolder(private val binding: ItemMealBinding) : RecyclerView.ViewHolder(binding.root) {
     fun bind(meal: Meal) {
+        binding.root.setOnClickListener {
+            it.context.startActivity(DetailActivity.createIntent(it.context, meal.id))
+        }
         binding.meal = meal
         Picasso.get().load(meal.thumbUri).into(binding.mealThumb)
         binding.executePendingBindings()

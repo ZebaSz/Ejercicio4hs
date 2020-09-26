@@ -41,6 +41,7 @@ class MainFragment : Fragment() {
                     binding.resultsList.visibility = View.VISIBLE
                     binding.resultsList.adapter = MainRecyclerAdapter(it.data)
                 }
+                // TODO: proper error handling
                 is Error -> Log.e("MainFragment", "failed to fetch", it.exception)
                 Loading -> {
                     binding.resultsList.visibility = View.GONE
