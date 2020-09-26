@@ -76,6 +76,9 @@ dependencies {
     kapt "androidx.databinding:databinding-compiler:4.0.1"
     kapt "androidx.room:room-compiler:2.2.5"
 
+    // Stetho
+    implementation "com.facebook.stetho:stetho:1.5.1"
+
     testImplementation "junit:junit:4.13"
     testImplementation "io.mockk:mockk:1.10.0"
     testImplementation "androidx.arch.core:core-testing:2.1.0"

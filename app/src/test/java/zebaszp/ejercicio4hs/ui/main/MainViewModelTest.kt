@@ -14,6 +14,7 @@ import org.junit.Rule
 import org.junit.Test
 import zebaszp.ejercicio4hs.domain.Meal
 import zebaszp.ejercicio4hs.domain.MealSearchResult
+import zebaszp.ejercicio4hs.domain.MealService
 import zebaszp.ejercicio4hs.utils.Loading
 import zebaszp.ejercicio4hs.utils.Success
 

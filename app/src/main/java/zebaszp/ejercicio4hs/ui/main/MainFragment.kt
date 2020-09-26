@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
 import zebaszp.ejercicio4hs.R
 import zebaszp.ejercicio4hs.databinding.MainFragmentBinding
 import zebaszp.ejercicio4hs.utils.Error
@@ -33,7 +34,7 @@ class MainFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel.results.observe(requireActivity()) {
+        viewModel.results.observe(viewLifecycleOwner) {
             when (it) {
                 is Success -> {
                     binding.loading.visibility = View.GONE
@@ -48,5 +49,4 @@ class MainFragment : Fragment() {
             }
         }
     }
-
 }

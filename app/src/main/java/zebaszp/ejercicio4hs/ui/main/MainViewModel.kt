@@ -3,6 +3,7 @@ package zebaszp.ejercicio4hs.ui.main
 import androidx.lifecycle.*
 import kotlinx.coroutines.Dispatchers
 import zebaszp.ejercicio4hs.domain.Meal
+import zebaszp.ejercicio4hs.domain.MealService
 import zebaszp.ejercicio4hs.utils.Loading
 import zebaszp.ejercicio4hs.utils.Result
 import zebaszp.ejercicio4hs.utils.Success

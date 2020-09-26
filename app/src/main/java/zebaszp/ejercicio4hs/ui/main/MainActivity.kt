@@ -1,8 +1,8 @@
-package zebaszp.ejercicio4hs
+package zebaszp.ejercicio4hs.ui.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import zebaszp.ejercicio4hs.ui.main.MainFragment
+import zebaszp.ejercicio4hs.R
 
 class MainActivity : AppCompatActivity() {
 
