@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Ejercicio 4hs</string>
+    <string name="mainfragment">MainFragment</string>
 </resources>
