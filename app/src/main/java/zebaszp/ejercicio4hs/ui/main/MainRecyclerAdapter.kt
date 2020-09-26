@@ -3,6 +3,7 @@ package zebaszp.ejercicio4hs.ui.main
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.squareup.picasso.Picasso
 import zebaszp.ejercicio4hs.databinding.ItemMealBinding
 import zebaszp.ejercicio4hs.domain.Meal
 
@@ -13,14 +14,17 @@ class MainRecyclerAdapter(private val data: List<Meal>) : RecyclerView.Adapter<M
         return MealViewHolder(binding)
     }
 
-    override fun onBindViewHolder(holder: MealViewHolder, position: Int) = holder.bind(data[position])
+    override fun onBindViewHolder(holder: MealViewHolder, position: Int) =
+        holder.bind(data[position])
 
-    override fun getItemCount() = data.size
+    override fun getItemCount() =
+        data.size
 }
 
 class MealViewHolder(private val binding: ItemMealBinding) : RecyclerView.ViewHolder(binding.root) {
     fun bind(meal: Meal) {
         binding.meal = meal
+        Picasso.get().load(meal.thumbUri).into(binding.mealThumb)
         binding.executePendingBindings()
     }
 }

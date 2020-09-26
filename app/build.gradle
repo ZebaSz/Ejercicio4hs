@@ -67,14 +67,10 @@ dependencies {
     implementation "com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:0.7.0"
     implementation "org.jetbrains.kotlinx:kotlinx-serialization-json:1.0.0-RC2"
 
-
-    // Room - database persistence
-    implementation "androidx.room:room-ktx:2.2.5"
-    implementation "androidx.room:room-runtime:2.2.5"
+    implementation "com.squareup.picasso:picasso:2.8"
 
     // Annotations processors
     kapt "androidx.databinding:databinding-compiler:4.0.1"
-    kapt "androidx.room:room-compiler:2.2.5"
 
     // Stetho
     implementation "com.facebook.stetho:stetho:1.5.1"
