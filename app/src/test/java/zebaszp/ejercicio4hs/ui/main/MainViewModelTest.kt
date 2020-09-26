@@ -13,6 +13,7 @@ import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import zebaszp.ejercicio4hs.domain.Meal
+import zebaszp.ejercicio4hs.domain.MealSearchResult
 import zebaszp.ejercicio4hs.utils.Loading
 import zebaszp.ejercicio4hs.utils.Success
 
@@ -33,16 +34,18 @@ class MainViewModelTest {
     @Test
     fun `request should be performed when search term is updated`() {
         val service = mockk<MealService>()
-        val serviceResponse: List<Meal> = listOf(mockk())
+        val serviceResponse = listOf<Meal>(mockk())
         coEvery { service.search(any()) } coAnswers {
             delay(500)
-            serviceResponse
+            MealSearchResult(serviceResponse)
         }
         val vm = MainViewModel(service)
         val newTerm = "newSearchTerm"
 
         var loading = false
+        var count = 0
         vm.results.observeForever {
+            ++count
             if (loading) {
                 assertEquals(Loading, it)
                 loading = false
@@ -57,6 +60,7 @@ class MainViewModelTest {
         runBlocking {
             delay(1000)
         }
+        assertEquals(2, count)
         coVerify {
             service.search(newTerm)
         }

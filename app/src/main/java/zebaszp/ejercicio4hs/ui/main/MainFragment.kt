@@ -1,6 +1,7 @@
 package zebaszp.ejercicio4hs.ui.main
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -39,7 +40,7 @@ class MainFragment : Fragment() {
                     binding.resultsList.visibility = View.VISIBLE
                     binding.resultsList.adapter = MainRecyclerAdapter(it.data)
                 }
-                is Error -> TODO()
+                is Error -> Log.e("MainFragment", "failed to fetch", it.exception)
                 Loading -> {
                     binding.resultsList.visibility = View.GONE
                     binding.loading.visibility = View.VISIBLE
